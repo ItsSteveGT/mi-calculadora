@@ -1,0 +1,118 @@
+:root {
+  --bg-color: #f2f2f2;
+  --text-color: #707070;
+  --display-bg: #676767;
+  --display-text: rgb(255, 255, 255);
+  --button-bg: #ddd;
+  --button-hover: #bbb;
+  --clear-bg: #f88;
+  --operator-bg: #ff9500;
+  --operator-text: white;
+  --equal-bg: #4caf50;
+  --equal-text: white;
+  --calculator-border: #ccc; 
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #1e1e1e;
+    --text-color: #eee;
+    --display-bg: #00000082;
+    --display-text: rgb(255, 255, 255);
+    --button-bg: #5d5d5da7;
+    --button-hover: #555;
+    --clear-bg: #c55;
+    --operator-bg: #ff9500;
+    --operator-text: white;
+    --equal-bg: #388e3c;
+    --equal-text: white;
+    --calculator-border: #444; 
+  }
+}
+
+.calculator {
+  max-width: 300px;
+  margin: 40px auto;
+  padding: 15px;
+  border-radius: 15px;
+  background: var(--bg-color);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border: 2px solid var(--calculator-border); 
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.calculator {
+  max-width: 300px;
+  margin: 40px auto;
+  padding: 15px;
+  border-radius: 15px;
+  background: var(--bg-color);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.display {
+  background: var(--display-bg);
+  color: var(--display-text);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  min-height: 60px;
+  text-align: right;
+}
+
+.input {
+  font-size: 1.5em;
+  word-wrap: break-word;
+}
+
+.result {
+  font-size: 1.2em;
+  color: white;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  padding: 20px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 50px;
+  background: var(--button-bg);
+  cursor: pointer;
+  transition: 0.2s;
+  color: var(--text-color);
+}
+
+button:hover {
+  background: var(--button-hover);
+}
+
+button.clear {
+  background: var(--clear-bg);
+  color: white;
+}
+
+button.equal {
+  background: var(--equal-bg);
+  color: var(--equal-text);
+}
+
+button.zero {
+  grid-column: span 2;
+}
+
+button:nth-child(4n),
+button:last-child {
+  background: var(--operator-bg);
+  color: var(--operator-text);
+}
